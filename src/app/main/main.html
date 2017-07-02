@@ -1,0 +1,368 @@
+<!-- // @Date    : 2017-06-30 18:55:01
+// @Author  : Chao Ma (cma1@kent.edu)
+// @Link    : https://hijiangtao.github.io/
+// @Version : $Id$ -->
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header">
+    <location-navbar></location-navbar>
+  </header>
+
+  <!-- <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Sections</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="keywords.html">Map</a>
+      <a class="mdl-navigation__link" href="">Data Sets</a>
+    </nav>
+  </div> -->
+
+  <main class="mdl-layout__content">
+    <div class "all">
+
+      <div class = "functionArea">
+        <div class = "timeTable">
+          <table>
+            <tr>
+              <td><input id = 'datefrom' type="date" value="2017-01-01"/> Start </td>
+              <td><input id = 'dateto' type="date" value="2017-05-01"/> End </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class = "radiolayer">
+          <input type="radio" checked value="cluster" id="checkCluster" name="item2">
+          <label>
+            <span class="big" style="margin-left:5px; margin-right:5px;">Draw Cluster</span>
+          </label>
+           <input type="radio" value="marker" id="checkMarker" name="item2">
+          <label>
+            <span class="big" style="margin-left:5px; margin-right:5px;">Draw Marker</span>
+          </label>
+           <input type="radio" value="heatMap" id="checkHeatmap" name="item2">
+          <label>
+            <span class="big" style="margin-left:5px;">Draw HeatMap</span>
+          </label>
+        </div>
+
+        <div class = "buttonlayer">
+        <button class = "removeButton removeButton2" id = "removeCluster";>Magic Remove</button>
+      
+        </div>
+
+
+      </div>
+
+
+      <div class = "middleArea">
+
+        <div class="mapArea" style=" margin-right:10px;">
+          <leaflet style="float:left" lf-center="map.tweets" lf-draw="map.drawOptions" legend="map.legend" height="100%" width="107%">
+        </leaflet>
+        </div>
+
+      </div>
+
+
+</div>
+
+
+
+<div class= "rightSideArea mdl-shadow--2dp">
+
+<div class="w3-bar w3-card-4 w3-light-grey">
+  <button class="w3-bar-item w3-button tablink" ng-click="openTabs($event,'function1')"> &nbsp; Area Analysis &nbsp; &nbsp;</button>
+  <button class="w3-bar-item w3-button tablink" ng-click="openTabs($event,'function2')"> &nbsp;Cluster Analysis &nbsp;</button>
+</div>
+
+<div id="function1" class="w3-container w3-display-container tab tabs">
+  <div class = "rightSideArea1">
+
+       <div class = "top">
+
+        <div class = "leftside">
+         <table>
+          <tr>
+            <td>
+               <table class = "right1">
+                 <tr>
+                    <th>Top Shape Words</th>
+                 </tr>
+               </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+               <div id="keywords"; style="height:141px; overflow:auto;">
+                 <table id="getback" class = "right1" >
+                   <tr>
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+       <div class = "rightside">
+         <table>
+          <tr>
+            <td>
+               <table class = "right3">
+                 <tr>
+                    <th>Top UserName</th>
+                 </tr>
+               </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+               <div id="userNameS"; style="height:141px; overflow:auto;">
+                 <table class = "right3" >
+                   <tr>
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+
+        </div>
+        <div class = "movewords">
+
+        <div class = "charts1" id = "chart1"> </div>
+        <div class="radarChart" id = "radar1"></div>
+
+      </div>
+
+
+      </div>
+</div>
+
+<div id="function2" class="w3-container w3-display-container tab tabs" style="display:none">
+
+  <div class = "rightSideArea1">
+
+  <div class = "top">
+    <div class = "leftside">
+         <table>
+          <tr>
+            <td>
+               <table class = "right1">
+                 <tr>
+                    <th>Top Cluster Words</th>
+                 </tr>
+               </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+               <div id="clusterWords"; style="height:141px; overflow:auto;">
+                 <table id="getback" class = "right1" >
+                   <tr>
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+       <div class = "rightside">
+         <table>
+          <tr>
+            <td>
+               <table class = "right3">
+                 <tr>
+                    <th>Top UserName</th>
+                 </tr>
+               </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+               <div id="userName"; style="height:141px; overflow:auto;">
+                 <table class = "right3" >
+                   <tr>
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      </div>
+
+  <div class = "movewords">
+
+  <div class = "charts2" id = "chart2"> </div> 
+  <div class="radarChartCluster" id = "radar2"></div>
+  
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+<div class = "slidein">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+
+  <div class = "leftArea">
+
+        <div class = "tweetsTextArea" style="padding-top:10px; padding-left:5px;">
+         <table width="250">
+          <tr>
+            <td>
+               <table class = "right4"width="280" >
+                 <tr>
+                    <th>text</th>
+                 </tr>
+               </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+               <div id="text"; style="width:280px; height:450px; overflow:auto;">
+                 <table class = "right4" width="280" >
+                   <tr>
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+       </div>
+
+       </div>
+
+</div>
+
+<div id ="sideButton">
+<a href="javascript:void(0)" ng-click="openNav()" id="slide"> open</a>
+</div>
+
+</div>
+
+
+
+<div class = "slideup">
+<div id="mySidenavUp" class="sidenavUp">
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNavUp()">&times;</a>
+
+  <div class = "keywordsChartArea" id = "wordsChart" style="margin-left:25px; margin-right:20px;"> </div>
+
+<div class = "showTime">
+
+  <div class = "timeChange2">
+         <table cellspacing="0" cellpadding="0" border="0" width="160">
+          <tr>
+            <td>
+               <div id="timeChange1"; style="width:160px; height:20px; ">
+                 <table id="times1" cellspacing="0" cellpadding="1" border="1" width="160">
+                   <tr>
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class = "timeChange3">
+         <table cellspacing="0" cellpadding="0" border="0" width="160">
+          <tr>
+            <td>
+               <div id="timeChange2"; style="width:160px; height:20px;">
+                 <table id="times2" cellspacing="0" cellpadding="1" border="1" width="160" >
+                   <tr>
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class = "timeChange4">
+         <table cellspacing="0" cellpadding="0" border="0" width="100">
+          <tr>
+            <td>
+               <div id=""; style="width:100px; height:20px;">
+                 <table id="" cellspacing="0" cellpadding="0" border="0" width="100" >
+                   <tr>
+                    <td><button id = "display";>showIt</button></td>
+
+                   </tr>
+                 </table>  
+               </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+</div>
+
+</div>
+
+<div id ="sideButton2">
+
+<a href="javascript:void(0)" ng-click="openNavUp()" id="slide2"> open</a>
+
+</div>
+
+</div>
+
+<div class = "controlPanel">
+
+   <table>
+          <tr>
+            <td>
+               <table class = "right2" width="270" >
+                 <tr>
+                    <th>Control Panel</th>
+                 </tr>
+               </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+               <div style="height:150px; overflow:auto;">
+                 <table id="myTable" class = "right1">
+              
+                 </table>  
+               </div>
+            </td>
+          </tr>
+      </table>
+
+</div>
+
+<div class = "clusterPanel">
+
+   <table>
+          <tr>
+            <td>
+               <div style="height:125px; overflow:auto;">
+                 <table id="myClusterTable" class = "right1" >
+              
+                 </table>  
+               </div>
+            </td>
+          </tr>
+      </table>
+
+</div>
+
+
+  </main>
+
+<!--   <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__right-section">
+
+    </div>
+  </footer> -->
+
+</div>

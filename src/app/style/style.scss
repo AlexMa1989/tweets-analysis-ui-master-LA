@@ -1,0 +1,682 @@
+body {
+  font: 8px sans-serif;
+}
+
+.axis path,
+.axis line, 
+.axis1 path,
+.axis1 line {
+  fill: none;
+  stroke: #E6E7E8;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path, .x.axis1 path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.legend-box {
+  cursor: pointer;  
+}
+
+#mouse-tracker {
+  stroke: #E6E7E8;
+  stroke-width: 1px;
+}
+
+.hover-line { 
+  stroke: #E6E7E8;
+  fill: none;
+  stroke-width: 1px;
+  left: 10px;
+  shape-rendering: crispEdges;
+  opacity: 1e-6;
+}
+
+.hover-text {
+  stroke: none;
+  font-size: 30px;
+  font-weight: bold;
+  fill: #000000;
+}
+
+.tooltip {
+  font-weight: normal;
+}
+
+.brush .extent {
+  stroke: #FFF;
+  shape-rendering: crispEdges;
+}
+
+.all{
+display : block;
+overflow : auto;
+}
+
+.functionArea{
+float : left;
+clear : none;
+height : 30px;
+width : 100%;
+margin-bottom : 5px;
+}
+
+
+.timeTable{
+float : left;
+clear : none;
+height : 20px;
+width : 30%;
+}
+
+.timeChange2{
+float : left;
+clear : none;
+height : 20px;
+width : 160px;
+}
+
+.timeChange3{
+float : left;
+clear : none;
+height : 20px;
+width : 160px;
+margin-left : 10px;
+}
+
+.timeChange4{
+float : left;
+clear : none;
+height : 20px;
+width : 100px;
+margin-left : 10px;
+}
+
+.buttonlayer
+{
+float : left;
+clear : none;
+}
+
+.removeButton
+{
+
+  background-color: #315f96;
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: -8px -4px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size: 8px;
+  
+}
+.removeButton2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.radiolayer
+{
+float : left;
+clear : none;
+height : 20px;
+width : 30%;
+}
+
+
+
+
+
+
+.leftArea{
+float : left;
+clear : none;
+height : 800px;
+}
+
+.tweetsTextArea{
+float : none;
+clear : both;
+width : 100%;
+margin-bottom : 20px;
+}
+
+.charts1{
+float : none;
+clear : both;
+height : 10px;
+width : 100%;
+margin-bottom : 110px;
+
+}
+
+.charts2{
+float : none;
+clear : both;
+height : 10px;
+width : 100%;
+margin-bottom : 110px;
+
+}
+
+.middleArea{
+position: relative;
+float : left;
+clear : none;
+height : 500px;
+width : 70%;
+}
+
+.mapArea{
+position: absolute;
+z-index: 1;
+float : none;
+clear : both;
+height : 550px;
+width : 100%;
+}
+
+.keywordsChartArea{
+position: absolute;
+z-index: 1;
+float : none;
+clear : both;
+height : 150px;
+width : 400px;
+}
+
+.rightSideArea{
+float : left;
+clear : none;
+width : 24%;
+height :95%;
+margin-left:70px;
+border-style: solid;
+border-width: 2px;
+}
+
+.rightSideArea1{
+float : left;
+clear : none;
+width : 30%;
+height : 500px;
+}
+
+.top{
+float : none;
+clear : both;
+height : 140px;
+width : 100%;
+margin-top : 20px;
+}
+
+
+
+.menuTable table{
+border: 1px solid black;
+}
+
+.menuTable td{
+border: 1px solid black;
+}
+
+.menuTable{
+float : none;
+clear : both;
+height : 150px;
+width : 150%;
+margin-left : 118px;
+margin-bottom : 12px;
+}
+
+.timeChange1{
+float : none;
+clear : both;
+height : 30px;
+width : 100%;
+margin-left : 18px;
+}
+
+.bottom td {
+    width:100%;
+    background-color:white;
+    color:black;
+}
+
+.bottom td:hover {
+    background-color:#315f96;
+    width:100%;
+    color:white;
+}
+
+.tweetsTextArea td {
+    display:block;
+    width:100%;
+    background-color:white;
+    color:black;
+}
+
+.tweetsTextArea td:hover {
+    background-color:#315f96;
+    width:100%;
+    color:white;
+}
+
+.top td {
+    width:100%;
+    background-color:white;
+    color:black;
+}
+
+.top td:hover {
+    background-color: #315f96;
+    color:white;
+}
+
+
+
+
+.sidenav {
+    height: 80%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 100;
+    left: 0;
+    background-color: rgba(49, 95, 150, 0.6);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#sideButton a {
+    position: absolute;
+    z-index: 2;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    background-color: rgba(6, 29, 56, 0.8);
+}
+
+#sideButton a:hover {
+    left: 0;
+
+}
+
+#slide {
+    top: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#sideButton2 a {
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    transition: 0.3s;
+    width: 100px;
+    right: 350px;
+    height: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgba(6, 29, 56, 0.8);
+}
+
+#sideButton2 a:hover {
+    top: 100;
+
+}
+
+#slide2 {
+    top: 690px;
+    right:300px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+.sidenavUp {
+    height: 0px;
+    width: 600px;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(49, 95, 150, 0.6);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-left: 230px;
+    margin-top: 410px;
+}
+
+.sidenavUp a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenavUp a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenavUp .closebtn {
+    position: absolute;
+    z-index: 3;
+    top: -10px;
+    right: 5px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenavUp {padding-top: 15px;}
+  .sidenavUp a {font-size: 18px;}
+}
+
+
+
+
+.w3-bar{margin-left:16px; width:264px;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
+
+
+.movewords
+{
+}
+
+.showTime
+{
+  position: absolute;
+  z-index: 2;
+  margin-top : 195px;
+  margin-left : 30px;
+}
+
+.radarChartCluster
+{
+    padding-top : 20px;
+}
+
+.radarChart
+{
+  padding-top : 20px;
+}
+
+
+.marker-cluster-large-change
+{
+  background-color: rgba(235, 61, 128, 0.63);
+  text-align: center;
+  font-size: 1px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.hideMarkers
+{
+  display:none;
+}
+
+
+.controlPanel
+{
+    height: 160px;
+    width: 275px;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(49, 95, 150, 0.6);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-left: 51%;
+    margin-top: 2.7%;
+    color: white; 
+}
+
+.controlPanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.controlPanel a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.controlPanel .closebtn {
+    position: absolute;
+    z-index: 3;
+    top: -10px;
+    right: 5px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .controlPanel {padding-top: 15px;}
+  .controlPanel a {font-size: 18px;}
+}
+
+.clusterPanel
+{
+    height: 125px;
+    width: 275px;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(25, 102, 95, 0.6);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-left: 51%;
+    margin-top: 15.5%;
+    color: white; 
+}
+
+.clusterPanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.clusterPanel a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.clusterPanel .closebtn {
+    position: absolute;
+    z-index: 3;
+    top: -10px;
+    right: 5px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .clusterPanel {padding-top: 15px;}
+  .clusterPanel a {font-size: 18px;}
+}
+
+
+.mdl-layout__header-row
+{
+  background-color: rgba(6, 29, 56, 0.6);
+}
+
+.mdl-layout-title
+{
+  right:50px;
+}
+
+.mdl-layout__header
+{
+  background-color:rgba(6, 29, 56, 0.6);
+}
+
+.mdl-button
+{
+  background-color:white;
+}
+
+.mdl-button:hover
+{
+  background-color:grey;
+}
+
+.w3-bar-item
+{
+  background-color: rgba(6, 29, 56, 0.8);
+  color:white;
+}
+
+.right1 {
+    border: solid 1px #315f96;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 120px;
+}
+
+.right1 tr th {
+    background-color: #315f96;
+    border: solid 0px #315f96;
+    color: white;
+    padding: 3px;
+    text-align: left;
+
+    
+}
+
+.right1 tr td {
+    border: solid 1px #315f96;
+    color: #333;
+    padding: 1px;
+}
+
+.right2 tr th {
+    background-color: #1c3859;
+    border: solid 1px #1c3859;
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+.right3{
+    border: solid 1px #19665f;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 120px;
+}
+
+.right3 tr th {
+    background-color: #19665f;
+    border: solid 0px #19665f;
+    color: white;
+    padding: 3px;
+    text-align: left;
+    
+}
+
+.right3 tr td {
+    border: solid 1px #19665f;
+    color: #333;
+    padding: 1px;
+}
+
+.right4 {
+    border: solid 1px #315f96;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.right4 tr th {
+    background-color: #315f96;
+    border: solid 0px #315f96;
+    color: white;
+    padding: 3px;
+    text-align: left;
+
+    
+}
+
+.right4 tr td {
+    border: solid 1px #315f96;
+    color: #333;
+    padding: 1px;
+}
+
+.leftside{
+  width: 30%;
+  float: left;
+}
+
+.rightside{
+  margin-left: 180%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
