@@ -1,6 +1,6 @@
 // @Date    : 2017-06-30 18:55:01
 // @Author  : Chao Ma (cma1@kent.edu)
-// @Link    : https://hijiangtao.github.io/
+// @Link    : https://github.com/AlexMa1989
 // @Version : $Id$
 
 (function(){
